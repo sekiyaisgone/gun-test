@@ -1,0 +1,16 @@
+{
+  "Width": 0.02,
+  "Length": 3.0,
+  "Color": {
+    "R": 255,
+    "G": 220,
+    "B": 140,
+    "A": 200
+  },
+  "FadeOutTime": 0.15,
+  "EmissionRate": 60,
+  "StartAlpha": 0.8,
+  "EndAlpha": 0.0,
+  "Texture": "Effects/Trails/bullet_trail.png",
+  "BlendMode": "Additive"
+}

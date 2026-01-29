@@ -1,0 +1,20 @@
+{
+  "Group": "AWPModder",
+  "Name": "AWP Sniper Mod",
+  "Version": "1.0.0",
+  "Description": "A detailed AWP sniper rifle with realistic mechanics and animations",
+  "Authors": [
+    {
+      "Name": "AWPModder",
+      "Email": "",
+      "Url": ""
+    }
+  ],
+  "Website": "",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true,
+  "SubPlugins": []
+}
