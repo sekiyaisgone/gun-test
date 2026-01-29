@@ -1,0 +1,19 @@
+{
+  "Layers": [
+    {
+      "Files": ["Sounds/Weapons/AWP/awp_shoot.ogg"],
+      "RandomSettings": {
+        "MinPitch": -1,
+        "MaxPitch": 1,
+        "MinVolume": -1,
+        "MaxVolume": 1
+      },
+      "Volume": -2
+    }
+  ],
+  "MaxInstance": 20,
+  "Volume": 1.2,
+  "PreventSoundInterruption": true,
+  "Parent": "SFX_Attn_Loud",
+  "MaxDistance": 50
+}

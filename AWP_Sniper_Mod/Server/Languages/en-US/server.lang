@@ -1,0 +1,5 @@
+items.Weapon_AWP.name=AWP Sniper Rifle
+items.Weapon_AWP.description=A precision bolt-action sniper rifle.\n\nRequires AWP Ammo\n\n<i>One shot, one kill.</i>
+
+items.AWP_Ammo.name=AWP Ammunition
+items.AWP_Ammo.description=High-caliber rounds designed for the AWP Sniper Rifle.

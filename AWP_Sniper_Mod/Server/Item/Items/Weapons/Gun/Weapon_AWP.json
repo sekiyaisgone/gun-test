@@ -1,0 +1,262 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Weapon_AWP.name",
+    "Description": "server.items.Weapon_AWP.description"
+  },
+  "Categories": ["Items.Weapons"],
+  "PlayerAnimationsId": {
+    "Parent": "Rifle",
+    "Animations": {
+      "Shoot": {
+        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Shoot.blockyanim",
+        "FirstPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Shoot_FPS.blockyanim",
+        "Speed": 2.5,
+        "BlendingDuration": 0,
+        "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim"
+      },
+      "Reload": {
+        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Reload.blockyanim",
+        "Speed": 1,
+        "BlendingDuration": 0.0,
+        "Looping": true,
+        "FirstPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Reload_FPS.blockyanim"
+      },
+      "Idle": {
+        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Idle.blockyanim"
+      },
+      "ADS": {
+        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_ADS.blockyanim",
+        "FirstPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_ADS_FPS.blockyanim",
+        "Speed": 1.0,
+        "BlendingDuration": 0.15
+      }
+    }
+  },
+  "Interactions": {
+    "Primary": {
+      "Cooldown": {
+        "Id": "AWP_Shoot",
+        "Cooldown": 1.5
+      },
+      "Interactions": [
+        {
+          "Type": "StatsCondition",
+          "Rules": {},
+          "Costs": {
+            "Ammo": 1
+          },
+          "LessThan": false,
+          "Next": {
+            "Type": "ChangeStat",
+            "StatModifiers": {
+              "Ammo": -1
+            },
+            "Next": {
+              "Type": "Replace",
+              "Var": "Shot_Fired"
+            },
+            "HorizontalSpeedMultiplier": 0,
+            "RunTime": 0
+          },
+          "HorizontalSpeedMultiplier": 1,
+          "Failed": "AWP_Ammo_Reload_Entry"
+        }
+      ],
+      "Tags": {
+        "Attack": ["Range"]
+      },
+      "RequireNewClick": true
+    },
+    "Secondary": "AWP_ADS",
+    "Ability3": "Root_AWP_Reload",
+    "SwapFrom": {
+      "Cooldown": {
+        "Cooldown": 0.25
+      },
+      "Interactions": ["AWP_Ammo_SwapFrom_Refund"]
+    },
+    "SwapTo": {
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "Var": "Reload_Batch"
+        }
+      ]
+    }
+  },
+  "InteractionVars": {
+    "Shot_Fired": {
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "Var": "AWP_Shot_Effects"
+        },
+        {
+          "Type": "Simple",
+          "Next": {
+            "Type": "LaunchProjectile",
+            "RunTime": 0,
+            "ProjectileId": "AWP_Bullet",
+            "HorizontalSpeedMultiplier": 1
+          },
+          "RunTime": 0,
+          "HorizontalSpeedMultiplier": 0,
+          "Effects": {
+            "ItemAnimationId": "Shoot"
+          }
+        },
+        {
+          "Type": "Replace",
+          "Var": "Camera_FX"
+        }
+      ]
+    },
+    "AWP_Shot_Effects": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "AWP_Muzzle_Flash",
+                "PositionOffset": {
+                  "Z": 1.2,
+                  "Y": 0.15
+                },
+                "RotationOffset": {
+                  "Pitch": 90
+                }
+              }
+            ],
+            "LocalSoundEventId": "SFX_AWP_Fire",
+            "WorldSoundEventId": "SFX_AWP_Fire"
+          }
+        }
+      ]
+    },
+    "Camera_FX": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "CameraEffect": "AWP_Shoot"
+          },
+          "RunTime": 0.08
+        }
+      ]
+    },
+    "No_Ammo_Effects": {
+      "Interactions": [
+        {
+          "Parent": "AWP_Empty_Noise"
+        }
+      ]
+    },
+    "Reload_Batch": {
+      "Interactions": [
+        {
+          "Type": "Serial",
+          "Interactions": [
+            {
+              "Type": "Repeat",
+              "ForkInteractions": {
+                "Interactions": [
+                  {
+                    "Type": "StatsCondition",
+                    "Costs": {
+                      "Ammo": 100
+                    },
+                    "LessThan": true,
+                    "ValueType": "Percent",
+                    "Next": {
+                      "Type": "ModifyInventory",
+                      "ItemToRemove": {
+                        "Id": "AWP_Ammo",
+                        "Quantity": 1
+                      },
+                      "Next": {
+                        "Type": "ChangeStat",
+                        "Entity": "User",
+                        "StatModifiers": {
+                          "Ammo": 1
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "Repeat": -1
+            },
+            {
+              "Type": "Simple",
+              "Effects": {
+                "LocalSoundEventId": "SFX_AWP_Reload"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.28,
+    "Rotation": [342, 56, 6],
+    "Translation": [-8, -32]
+  },
+  "Texture": "Items/Weapons/Gun/AWP_Texture.png",
+  "Icon": "Icons/ItemsGenerated/Weapon_AWP.png",
+  "Quality": "Rare",
+  "Tags": {
+    "Type": ["Weapon"]
+  },
+  "Weapon": {
+    "StatModifiers": {
+      "Ammo": [
+        {
+          "Amount": 10,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "RenderDualWielded": false,
+    "EntityStatsToClear": ["Ammo"]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 30
+      },
+      {
+        "ItemId": "Ingredient_Leather_Medium",
+        "Quantity": 15
+      },
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 50
+      },
+      {
+        "ItemId": "Ingredient_Bar_Gold",
+        "Quantity": 10
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": ["Weapon_Bow"],
+        "Id": "Weapon_Bench",
+        "RequiredTierLevel": 3
+      }
+    ]
+  },
+  "DisplayEntityStatsHUD": ["Ammo"],
+  "InteractionConfig": {
+    "DisplayOutlines": false
+  },
+  "ItemLevel": 8,
+  "MaxDurability": 120,
+  "DurabilityLossOnHit": 0.25,
+  "UsePlayerAnimations": false,
+  "Model": "Items/Weapons/Gun/AWP_Model.blockymodel",
+  "Scale": 1.0
+}

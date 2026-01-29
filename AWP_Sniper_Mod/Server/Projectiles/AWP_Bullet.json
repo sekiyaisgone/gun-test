@@ -1,0 +1,25 @@
+{
+  "Appearance": "AWP_Bullet_Model",
+  "Radius": 0.08,
+  "Height": 0,
+  "DepthShot": 0.9,
+  "PitchAdjustShot": true,
+  "SticksVertically": true,
+  "MuzzleVelocity": 1500,
+  "TerminalVelocity": 1500,
+  "Gravity": 5,
+  "Bounciness": 0,
+  "ImpactSlowdown": 0,
+  "TimeToLive": 80,
+  "Damage": 115,
+  "DeathEffectsOnHit": true,
+  "DeadTime": 0.05,
+  "DeadTimeMiss": 0,
+  "DeathParticles": {
+    "SystemId": "AWP_Impact"
+  },
+  "VerticalCenterShot": 0,
+  "HorizontalCenterShot": 0,
+  "DeathSoundEventId": "SFX_AWP_Impact",
+  "Trail": "AWP_Bullet"
+}

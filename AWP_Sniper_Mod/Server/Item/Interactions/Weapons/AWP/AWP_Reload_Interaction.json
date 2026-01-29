@@ -1,0 +1,58 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "StatsCondition",
+      "Costs": {
+        "Ammo": 100
+      },
+      "LessThan": true,
+      "ValueType": "Percent",
+      "Next": {
+        "Type": "Serial",
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "Effects": {
+              "ItemAnimationId": "Reload",
+              "LocalSoundEventId": "SFX_AWP_Reload"
+            },
+            "RunTime": 2.5,
+            "HorizontalSpeedMultiplier": 0.5,
+            "Cancellable": true
+          },
+          {
+            "Type": "Repeat",
+            "ForkInteractions": {
+              "Interactions": [
+                {
+                  "Type": "StatsCondition",
+                  "Costs": {
+                    "Ammo": 100
+                  },
+                  "LessThan": true,
+                  "ValueType": "Percent",
+                  "Next": {
+                    "Type": "ModifyInventory",
+                    "ItemToRemove": {
+                      "Id": "AWP_Ammo",
+                      "Quantity": 1
+                    },
+                    "Next": {
+                      "Type": "ChangeStat",
+                      "Entity": "User",
+                      "StatModifiers": {
+                        "Ammo": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "Repeat": -1
+          }
+        ]
+      }
+    }
+  ]
+}

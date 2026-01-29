@@ -1,0 +1,46 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.AWP_Ammo.name",
+    "Description": "server.items.AWP_Ammo.description"
+  },
+  "Categories": ["Items.Weapons"],
+  "Quality": "Uncommon",
+  "ItemLevel": 6,
+  "PlayerAnimationsId": "Item",
+  "Recipe": {
+    "TimeSeconds": 0.8,
+    "KnowledgeRequired": false,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Bar_Copper",
+        "Quantity": 2
+      }
+    ],
+    "OutputQuantity": 20,
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": ["Weapon_Bow"],
+        "Id": "Weapon_Bench"
+      }
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.85,
+    "Rotation": [180, 67, 129],
+    "Translation": [5, -2]
+  },
+  "Model": "Items/Weapons/Ammo/AWP_Ammo.blockymodel",
+  "Texture": "Items/Weapons/Ammo/AWP_Ammo_Texture.png",
+  "Icon": "Icons/ItemsGenerated/AWP_Ammo_Box.png",
+  "MaxStack": 999,
+  "Tags": {
+    "Type": ["Weapon"],
+    "Family": ["Arrow"]
+  },
+  "ItemSoundSetId": "ISS_Weapons_Arrows"
+}
