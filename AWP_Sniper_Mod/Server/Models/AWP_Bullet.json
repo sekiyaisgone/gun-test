@@ -1,0 +1,8 @@
+{
+  "Model": "Entity/Projectiles/AWP_Bullet.blockymodel",
+  "Texture": "Entity/Projectiles/AWP_Bullet_Texture.png",
+  "HitBox": {
+    "Min": [-0.04, -0.04, -0.2],
+    "Max": [0.04, 0.04, 0.2]
+  }
+}
