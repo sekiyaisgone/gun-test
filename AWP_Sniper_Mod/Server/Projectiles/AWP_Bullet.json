@@ -1,5 +1,4 @@
 {
-  "Appearance": "AWP_Bullet_Model",
   "Radius": 0.08,
   "Height": 0,
   "DepthShot": 0.9,
@@ -15,11 +14,7 @@
   "DeathEffectsOnHit": true,
   "DeadTime": 0.05,
   "DeadTimeMiss": 0,
-  "DeathParticles": {
-    "SystemId": "AWP_Impact"
-  },
   "VerticalCenterShot": 0,
   "HorizontalCenterShot": 0,
-  "DeathSoundEventId": "SFX_AWP_Impact",
-  "Trail": "AWP_Bullet"
+  "DeathSoundEventId": "SFX_AWP_Impact"
 }

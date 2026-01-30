@@ -1,5 +1,4 @@
 {
-  "Type": "Serial",
   "Cooldown": {
     "Id": "AWP_Reload",
     "Cooldown": 0.5
@@ -16,55 +15,43 @@
         "Type": "Serial",
         "Interactions": [
           {
-            "Type": "Condition",
-            "ConditionType": "HasItem",
-            "ItemId": "AWP_Ammo",
-            "Quantity": 1,
-            "Next": {
-              "Type": "Serial",
+            "Type": "Simple",
+            "Effects": {
+              "LocalSoundEventId": "SFX_AWP_Reload"
+            },
+            "RunTime": 2.5,
+            "HorizontalSpeedMultiplier": 0.5,
+            "Cancellable": true
+          },
+          {
+            "Type": "Repeat",
+            "ForkInteractions": {
               "Interactions": [
                 {
-                  "Type": "Simple",
-                  "Effects": {
-                    "ItemAnimationId": "Reload",
-                    "LocalSoundEventId": "SFX_AWP_Reload"
+                  "Type": "StatsCondition",
+                  "Costs": {
+                    "Ammo": 100
                   },
-                  "RunTime": 2.5,
-                  "HorizontalSpeedMultiplier": 0.5,
-                  "Cancellable": true
-                },
-                {
-                  "Type": "Repeat",
-                  "ForkInteractions": {
-                    "Interactions": [
-                      {
-                        "Type": "StatsCondition",
-                        "Costs": {
-                          "Ammo": 100
-                        },
-                        "LessThan": true,
-                        "ValueType": "Percent",
-                        "Next": {
-                          "Type": "ModifyInventory",
-                          "ItemToRemove": {
-                            "Id": "AWP_Ammo",
-                            "Quantity": 1
-                          },
-                          "Next": {
-                            "Type": "ChangeStat",
-                            "Entity": "User",
-                            "StatModifiers": {
-                              "Ammo": 1
-                            }
-                          }
-                        }
+                  "LessThan": true,
+                  "ValueType": "Percent",
+                  "Next": {
+                    "Type": "ModifyInventory",
+                    "ItemToRemove": {
+                      "Id": "AWP_Ammo",
+                      "Quantity": 1
+                    },
+                    "Next": {
+                      "Type": "ChangeStat",
+                      "Entity": "User",
+                      "StatModifiers": {
+                        "Ammo": 1
                       }
-                    ]
-                  },
-                  "Repeat": -1
+                    }
+                  }
                 }
               ]
-            }
+            },
+            "Repeat": -1
           }
         ]
       }

@@ -25,6 +25,6 @@
   "MaxInstance": 5,
   "Volume": 0.9,
   "PreventSoundInterruption": false,
-  "Parent": "SFX_Attn_Medium",
+  "Parent": "SFX_Attn_Loud",
   "MaxDistance": 15
 }
