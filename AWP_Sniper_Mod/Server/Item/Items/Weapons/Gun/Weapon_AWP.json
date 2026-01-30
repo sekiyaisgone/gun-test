@@ -40,24 +40,26 @@
       },
       "RequireNewClick": true
     },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "HorizontalSpeedMultiplier": 0.3,
+          "RunTime": 0
+        }
+      ]
+    },
     "Ability3": "Root_AWP_Reload"
   },
   "InteractionVars": {
     "Shot_Fired": {
       "Interactions": [
         {
-          "Type": "Simple",
-          "Next": {
-            "Type": "LaunchProjectile",
-            "RunTime": 0,
-            "ProjectileId": "AWP_Bullet",
-            "HorizontalSpeedMultiplier": 1
-          },
+          "Type": "LaunchProjectile",
+          "Config": "AWP_Bullet",
           "RunTime": 0,
           "HorizontalSpeedMultiplier": 0,
           "Effects": {
-            "LocalSoundEventId": "SFX_AWP_Fire",
-            "WorldSoundEventId": "SFX_AWP_Fire",
             "CameraShake": "AWP/AWP_Shoot"
           }
         }
@@ -169,5 +171,5 @@
   "DurabilityLossOnHit": 0.25,
   "UsePlayerAnimations": true,
   "Model": "Items/Weapons/Gun/AWP_Model.blockymodel",
-  "Scale": 3.0
+  "Scale": 2.0
 }
