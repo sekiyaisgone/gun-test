@@ -4,9 +4,7 @@
     "Description": "server.items.Weapon_AWP.description"
   },
   "Categories": ["Items.Weapons"],
-  "PlayerAnimationsId": {
-    "Parent": "Rifle"
-  },
+  "PlayerAnimationsId": "Rifle",
   "Interactions": {
     "Primary": {
       "Cooldown": {
@@ -42,21 +40,7 @@
       },
       "RequireNewClick": true
     },
-    "Ability3": "Root_AWP_Reload",
-    "SwapFrom": {
-      "Cooldown": {
-        "Cooldown": 0.25
-      },
-      "Interactions": ["AWP_Ammo_SwapFrom_Refund"]
-    },
-    "SwapTo": {
-      "Interactions": [
-        {
-          "Type": "Replace",
-          "Var": "Reload_Batch"
-        }
-      ]
-    }
+    "Ability3": "Root_AWP_Reload"
   },
   "InteractionVars": {
     "Shot_Fired": {
@@ -183,7 +167,7 @@
   "ItemLevel": 8,
   "MaxDurability": 120,
   "DurabilityLossOnHit": 0.25,
-  "UsePlayerAnimations": false,
+  "UsePlayerAnimations": true,
   "Model": "Items/Weapons/Gun/AWP_Model.blockymodel",
-  "Scale": 1.0
+  "Scale": 3.0
 }

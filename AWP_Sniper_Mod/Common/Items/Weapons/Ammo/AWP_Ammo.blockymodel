@@ -1,62 +1,109 @@
 {
-  "format_version": "1.0",
-  "format": "prop",
-  "resolution": {
-    "width": 16,
-    "height": 16
-  },
   "nodes": [
     {
+      "id": "1",
       "name": "ammo_box",
-      "origin": [0, 0, 0],
-      "rotation": [0, 0, 0, 1],
+      "position": {"x": 0, "y": 0, "z": 0},
+      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+      "shape": {
+        "type": "box",
+        "offset": {"x": 0, "y": 2, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
+        "settings": {
+          "isPiece": false,
+          "size": {"x": 6, "y": 4, "z": 4}
+        },
+        "textureLayout": {
+          "back": {
+            "offset": {"x": 4, "y": 4},
+            "mirror": {"x": false, "y": false},
+            "angle": 0
+          },
+          "right": {
+            "offset": {"x": 0, "y": 4},
+            "mirror": {"x": false, "y": false},
+            "angle": 0
+          },
+          "front": {
+            "offset": {"x": 4, "y": 4},
+            "mirror": {"x": false, "y": false},
+            "angle": 0
+          },
+          "left": {
+            "offset": {"x": 0, "y": 4},
+            "mirror": {"x": false, "y": false},
+            "angle": 0
+          },
+          "top": {
+            "offset": {"x": 4, "y": 0},
+            "mirror": {"x": false, "y": false},
+            "angle": 0
+          },
+          "bottom": {
+            "offset": {"x": 4, "y": 0},
+            "mirror": {"x": false, "y": false},
+            "angle": 0
+          }
+        },
+        "unwrapMode": "custom",
+        "visible": true,
+        "doubleSided": false
+      },
       "children": [
         {
-          "name": "box_body",
-          "origin": [0, 0, 0],
-          "rotation": [0, 0, 0, 1],
-          "cubes": [
-            {
-              "origin": [-3, 0, -2],
-              "size": [6, 4, 4],
-              "uv": {
-                "back": {"uv": [4, 4, 10, 8], "texture": 0},
-                "right": {"uv": [0, 4, 4, 8], "texture": 0},
-                "front": {"uv": [4, 4, 10, 8], "texture": 0},
-                "left": {"uv": [0, 4, 4, 8], "texture": 0},
-                "top": {"uv": [4, 0, 10, 4], "texture": 0},
-                "bottom": {"uv": [4, 0, 10, 4], "texture": 0}
-              }
-            }
-          ]
-        },
-        {
+          "id": "2",
           "name": "box_lid",
-          "origin": [0, 4, 0],
-          "rotation": [0, 0, 0, 1],
-          "cubes": [
-            {
-              "origin": [-3, 4, -2],
-              "size": [6, 1, 4],
-              "uv": {
-                "back": {"uv": [4, 8, 10, 9], "texture": 0},
-                "right": {"uv": [0, 8, 4, 9], "texture": 0},
-                "front": {"uv": [4, 8, 10, 9], "texture": 0},
-                "left": {"uv": [0, 8, 4, 9], "texture": 0},
-                "top": {"uv": [4, 10, 10, 14], "texture": 0},
-                "bottom": {"uv": [4, 10, 10, 14], "texture": 0}
+          "position": {"x": 0, "y": 4, "z": 0},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "box",
+            "offset": {"x": 0, "y": 0.5, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false,
+              "size": {"x": 6, "y": 1, "z": 4}
+            },
+            "textureLayout": {
+              "back": {
+                "offset": {"x": 4, "y": 8},
+                "mirror": {"x": false, "y": false},
+                "angle": 0
+              },
+              "right": {
+                "offset": {"x": 0, "y": 8},
+                "mirror": {"x": false, "y": false},
+                "angle": 0
+              },
+              "front": {
+                "offset": {"x": 4, "y": 8},
+                "mirror": {"x": false, "y": false},
+                "angle": 0
+              },
+              "left": {
+                "offset": {"x": 0, "y": 8},
+                "mirror": {"x": false, "y": false},
+                "angle": 0
+              },
+              "top": {
+                "offset": {"x": 4, "y": 10},
+                "mirror": {"x": false, "y": false},
+                "angle": 0
+              },
+              "bottom": {
+                "offset": {"x": 4, "y": 10},
+                "mirror": {"x": false, "y": false},
+                "angle": 0
               }
-            }
-          ]
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false
+          },
+          "children": []
         }
       ]
     }
   ],
-  "textures": [
-    {
-      "name": "ammo_texture",
-      "source": "Items/Weapons/Ammo/AWP_Ammo_Texture.png"
-    }
-  ],
+  "format": "prop",
   "lod": "auto"
 }
