@@ -5,32 +5,7 @@
   },
   "Categories": ["Items.Weapons"],
   "PlayerAnimationsId": {
-    "Parent": "Rifle",
-    "Animations": {
-      "Shoot": {
-        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Shoot.blockyanim",
-        "FirstPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Shoot_FPS.blockyanim",
-        "Speed": 2.5,
-        "BlendingDuration": 0,
-        "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim"
-      },
-      "Reload": {
-        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Reload.blockyanim",
-        "Speed": 1,
-        "BlendingDuration": 0.0,
-        "Looping": true,
-        "FirstPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Reload_FPS.blockyanim"
-      },
-      "Idle": {
-        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_Idle.blockyanim"
-      },
-      "ADS": {
-        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_ADS.blockyanim",
-        "FirstPerson": "Characters/Animations/Items/Dual_Handed/AWP/AWP_ADS_FPS.blockyanim",
-        "Speed": 1.0,
-        "BlendingDuration": 0.15
-      }
-    }
+    "Parent": "Rifle"
   },
   "Interactions": {
     "Primary": {
@@ -67,7 +42,6 @@
       },
       "RequireNewClick": true
     },
-    "Secondary": "AWP_ADS",
     "Ability3": "Root_AWP_Reload",
     "SwapFrom": {
       "Cooldown": {
@@ -88,10 +62,6 @@
     "Shot_Fired": {
       "Interactions": [
         {
-          "Type": "Replace",
-          "Var": "AWP_Shot_Effects"
-        },
-        {
           "Type": "Simple",
           "Next": {
             "Type": "LaunchProjectile",
@@ -102,53 +72,10 @@
           "RunTime": 0,
           "HorizontalSpeedMultiplier": 0,
           "Effects": {
-            "ItemAnimationId": "Shoot"
-          }
-        },
-        {
-          "Type": "Replace",
-          "Var": "Camera_FX"
-        }
-      ]
-    },
-    "AWP_Shot_Effects": {
-      "Interactions": [
-        {
-          "Type": "Simple",
-          "Effects": {
-            "Particles": [
-              {
-                "SystemId": "AWP_Muzzle_Flash",
-                "PositionOffset": {
-                  "Z": 1.2,
-                  "Y": 0.15
-                },
-                "RotationOffset": {
-                  "Pitch": 90
-                }
-              }
-            ],
             "LocalSoundEventId": "SFX_AWP_Fire",
-            "WorldSoundEventId": "SFX_AWP_Fire"
+            "WorldSoundEventId": "SFX_AWP_Fire",
+            "CameraShake": "AWP/AWP_Shoot"
           }
-        }
-      ]
-    },
-    "Camera_FX": {
-      "Interactions": [
-        {
-          "Type": "Simple",
-          "Effects": {
-            "CameraEffect": "AWP_Shoot"
-          },
-          "RunTime": 0.08
-        }
-      ]
-    },
-    "No_Ammo_Effects": {
-      "Interactions": [
-        {
-          "Parent": "AWP_Empty_Noise"
         }
       ]
     },

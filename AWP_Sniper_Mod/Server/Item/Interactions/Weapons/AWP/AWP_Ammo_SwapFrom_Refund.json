@@ -1,0 +1,20 @@
+{
+  "Type": "StatsCondition",
+  "Costs": {
+    "Ammo": 1
+  },
+  "LessThan": false,
+  "Next": {
+    "Type": "ChangeStat",
+    "StatModifiers": {
+      "Ammo": -1
+    },
+    "Next": {
+      "Type": "ModifyInventory",
+      "ItemToAdd": {
+        "Id": "AWP_Ammo",
+        "Quantity": 1
+      }
+    }
+  }
+}

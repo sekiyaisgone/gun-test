@@ -14,44 +14,20 @@
           "Ammo": -1
         },
         "Next": {
-          "Type": "Serial",
-          "Interactions": [
-            {
-              "Type": "Simple",
-              "RunTime": 0,
-              "HorizontalSpeedMultiplier": 0,
-              "Effects": {
-                "ItemAnimationId": "Shoot",
-                "Particles": [
-                  {
-                    "SystemId": "AWP_Muzzle_Flash",
-                    "PositionOffset": {
-                      "Z": 1.2,
-                      "Y": 0.15
-                    },
-                    "RotationOffset": {
-                      "Pitch": 90
-                    }
-                  }
-                ],
-                "LocalSoundEventId": "SFX_AWP_Fire",
-                "WorldSoundEventId": "SFX_AWP_Fire"
-              }
-            },
-            {
-              "Type": "LaunchProjectile",
-              "RunTime": 0,
-              "ProjectileId": "AWP_Bullet",
-              "HorizontalSpeedMultiplier": 1
-            },
-            {
-              "Type": "Simple",
-              "Effects": {
-                "CameraEffect": "AWP_Shoot"
-              },
-              "RunTime": 0.08
-            }
-          ]
+          "Type": "Simple",
+          "RunTime": 0,
+          "HorizontalSpeedMultiplier": 0,
+          "Effects": {
+            "LocalSoundEventId": "SFX_AWP_Fire",
+            "WorldSoundEventId": "SFX_AWP_Fire",
+            "CameraShake": "AWP/AWP_Shoot"
+          },
+          "Next": {
+            "Type": "LaunchProjectile",
+            "RunTime": 0,
+            "ProjectileId": "AWP_Bullet",
+            "HorizontalSpeedMultiplier": 1
+          }
         },
         "HorizontalSpeedMultiplier": 0,
         "RunTime": 0
@@ -59,13 +35,5 @@
       "HorizontalSpeedMultiplier": 1,
       "Failed": "AWP_Ammo_Reload_Entry"
     }
-  ],
-  "Cooldown": {
-    "Id": "AWP_Shoot",
-    "Cooldown": 1.5
-  },
-  "Tags": {
-    "Attack": ["Range"]
-  },
-  "RequireNewClick": true
+  ]
 }
