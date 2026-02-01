@@ -13,26 +13,15 @@
       },
       "Interactions": [
         {
-          "Type": "StatsCondition",
-          "Rules": {},
-          "Costs": {
-            "Ammo": 1
-          },
-          "LessThan": false,
-          "Next": {
-            "Type": "ChangeStat",
-            "StatModifiers": {
-              "Ammo": -1
-            },
-            "Next": {
-              "Type": "Replace",
-              "Var": "Shot_Fired"
-            },
-            "HorizontalSpeedMultiplier": 0,
-            "RunTime": 0
-          },
-          "HorizontalSpeedMultiplier": 1,
-          "Failed": "AWP_Ammo_Reload_Entry"
+          "Type": "LaunchProjectile",
+          "ProjectileId": "AWP_Bullet",
+          "RunTime": 0,
+          "HorizontalSpeedMultiplier": 0,
+          "Effects": {
+            "LocalSoundEventId": "SFX_AWP_Fire",
+            "WorldSoundEventId": "SFX_AWP_Fire",
+            "CameraShake": "AWP/AWP_Shoot"
+          }
         }
       ],
       "Tags": {
@@ -52,19 +41,6 @@
     "Ability3": "Root_AWP_Reload"
   },
   "InteractionVars": {
-    "Shot_Fired": {
-      "Interactions": [
-        {
-          "Type": "LaunchProjectile",
-          "Config": "AWP_Bullet",
-          "RunTime": 0,
-          "HorizontalSpeedMultiplier": 0,
-          "Effects": {
-            "CameraShake": "AWP/AWP_Shoot"
-          }
-        }
-      ]
-    },
     "Reload_Batch": {
       "Interactions": [
         {
